@@ -1,1 +1,10 @@
 {% extends 'base/base-page.html' %}
+{% block page_content %}
+    <form>
+        {{ form }}
+        <input type="hidden" name="next" value="{{ next }}">
+        <button type="submit">Log in</button>
+        {% csrf_token %}
+    </form>
+
+{% endblock %}

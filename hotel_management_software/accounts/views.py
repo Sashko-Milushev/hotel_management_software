@@ -8,6 +8,19 @@ UserModel = get_user_model()
 
 class SignInView(auth_view.LoginView):
     template_name = 'accounts/sign-in-page.html'
+    success_url = reverse_lazy('home')
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+
+        context['logged_in_user'] = 'In' if self.request.user.is_authenticated else 'Not in'
+        return context
+
+    def get_success_url(self):
+        if self.success_url:
+            return self.success_url
+        else:
+            return self.get_redirect_url() or self.get_default_redirect_url()
 
 
 class SignOutView(auth_view.LogoutView):
