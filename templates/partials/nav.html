@@ -14,17 +14,19 @@
                     <li class="nav-item">
                         <a class="nav-link" href="{% url 'logout user' %}">Logout</a>
                     </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
-                           data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Manage rooms
-                        </a>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                            <a class="dropdown-item" href="#">Add room</a>
-                            <a class="dropdown-item" href="#">Change room</a>
-                            <a class="dropdown-item" href="#">Remove room</a>
-                        </div>
-                    </li>
+                    {% if is_superuser == 'Yes' %}
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
+                               data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Manage rooms
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                <a class="dropdown-item" href="#">Add room</a>
+                                <a class="dropdown-item" href="#">Change room</a>
+                                <a class="dropdown-item" href="#">Remove room</a>
+                            </div>
+                        </li>
+                    {% endif %}
                 </ul>
             </div>
         </nav>

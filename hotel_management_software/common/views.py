@@ -9,4 +9,5 @@ class HomeView(views.TemplateView):
         context = super().get_context_data(**kwargs)
 
         context['logged_in_user'] = 'In' if self.request.user.is_authenticated else 'Not in'
+        context['is_superuser'] = 'Yes' if self.request.user.is_superuser else 'Not'
         return context
