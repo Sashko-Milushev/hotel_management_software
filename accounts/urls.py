@@ -1,6 +1,6 @@
 from django.urls import path
 
-from hotel_management_software.accounts.views import SignInView, ChangePasswordView, ChangePasswordDoneView
+from accounts.views import SignInView, ChangePasswordView, ChangePasswordDoneView
 
 urlpatterns = (
     path('login/', SignInView.as_view(), name='login user'),
