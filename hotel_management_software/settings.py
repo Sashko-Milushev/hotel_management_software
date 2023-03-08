@@ -20,7 +20,8 @@ INSTALLED_APPS = [
 
     'hotel_management_software.accounts',
     'hotel_management_software.rooms',
-    'hotel_management_software.common'
+    'hotel_management_software.common',
+    'hotel_management_software.reservations'
 ]
 
 MIDDLEWARE = [
